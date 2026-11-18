@@ -28,4 +28,48 @@ class BST:
                     else:
                         temp = temp.right 
 
+def inorder(temp):
+    if temp is None:        #recursive function end condition
+        return      
+    else:
+        
+        inorder(temp.left)
+        print(temp.data, end=" ")
+        inorder(temp.right)
+
+def preorder(temp):
+    if temp is None:        #recursive function end condition
+        return      
+    else:
+        print(temp.data, end=" ")
+        inorder(temp.left)
+        inorder(temp.right)
+
+def postorder(temp):      #recursive
+    if temp is None:        #recursive function end condition
+        return      
+    else:
+        
+        inorder(temp.left)
+        inorder(temp.right)
+        print(temp.data, end=" ")
+
+
+btree = BST()
+btree.insert(Node(10))
+btree.insert(Node(5))
+btree.insert(Node(2))
+btree.insert(Node(25))
+btree.insert(Node(13))
+btree.insert(Node(40))
+
+print("Inorder BST :-")
+inorder(btree.root)
+print()
+print("Preorder BST :-")
+preorder(btree.root)
+print()
+print("Postorder BST :-")
+postorder(btree.root)
+print()
 
